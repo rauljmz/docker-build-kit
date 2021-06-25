@@ -4,4 +4,6 @@ WORKDIR /src
 
 RUN --mount=target=/context cat /context/tests/some-test.txt > myfile.txt
 
-ENTRYPOINT ["cat", "/src/myfile.txt"]
+COPY entrypoint.sh .
+
+CMD [ "/src/entrypoint.sh" ]
