@@ -1,0 +1,7 @@
+FROM node:14-alpine
+
+WORKDIR /src
+
+COPY . .
+
+RUN --mount=type=cache,target=/root/.npm npm ci
